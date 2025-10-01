@@ -1,4 +1,4 @@
-name: Lint React app
+name: Test workflow
 
 on:
   push:
