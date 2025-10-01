@@ -11,3 +11,11 @@ jobs:
     steps:
       - name: 22f2000136@ds.study.iitm.ac.in
         run: echo "Hello, world!"
+  cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: prime-cache-11d78b8
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/key
+          key: "cache-11d78b8"
