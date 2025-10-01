@@ -9,13 +9,24 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: 22f2000136@ds.study.iitm.ac.in
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Hello
         run: echo "Hello, world!"
+
   cache:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
       - name: prime-cache-11d78b8
+        id: cache-step
         uses: actions/cache@v4
         with:
           path: ~/.cache/key
           key: cache-11d78b8
+
+      - name: Echo cache result
+        run: echo "Cache hit? ${{ steps.cache-step.outputs.cache-hit }}"
