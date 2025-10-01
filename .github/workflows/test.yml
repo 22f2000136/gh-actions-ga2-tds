@@ -21,6 +21,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Create cache folder
+        run: mkdir -p ~/.cache/key
+
       - name: prime-cache-11d78b8
         id: cache-step
         uses: actions/cache@v4
